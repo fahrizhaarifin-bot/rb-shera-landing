@@ -1,80 +1,164 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RB SHERA — Abnormality Management</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RB SHERA — Abnormality Management</title>
 
-<style>
-*{
-  box-sizing:border-box;
-}
+  <style>
+    :root{
+      --rb-purple: #7B2D8D;
+      --rb-purple-2: #9D4EDD;
+      --rb-green: #16A34A;
+      --rb-green-2: #22C55E;
+      --rb-dark: #1F2937;
+      --rb-gray: #6B7280;
+      --rb-gray-dark: #374151;
+      --rb-gray-dark-2: #4B5563;
+      --card-bg: #ffffff;
+      --page-bg-1: #f3e8ff;
+      --page-bg-2: #ecfdf5;
+    }
 
-body{
-  margin:0;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:Arial, sans-serif;
-  background:#f3e8ff;
-}
+    * { box-sizing: border-box; }
+    html,body { height: 100%; margin: 0; font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
 
-.card{
-  width:100%;
-  max-width:420px;
-  background:#fff;
-  padding:24px;
-  border-radius:16px;
-  text-align:center;
-}
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--page-bg-1), var(--page-bg-2));
+      padding: 24px;
+      color: var(--rb-dark);
+    }
 
-.logo{
-  width:160px;
-  margin-bottom:16px;
-}
+    .card {
+      width: 100%;
+      max-width: 460px;
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 32px 26px 44px;
+      box-shadow: 0 18px 40px rgba(31,41,55,0.08);
+      text-align: center;
+      position: relative;
+    }
 
-button{
-  width:100%;
-  padding:14px;
-  margin-bottom:12px;
-  font-size:16px;
-  font-weight:bold;
-  border:none;
-  border-radius:10px;
-  color:#fff;
-}
+    .logo {
+      width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto 18px;
+      object-fit: contain;
+    }
 
-.create{background:#7B2D8D}
-.close{background:#16A34A}
-.dashboard{background:#4B5563}
-</style>
+    h1 {
+      margin: 6px 0 6px;
+      font-size: 21px;
+      color: var(--rb-dark);
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 0 0 24px;
+      color: var(--rb-gray);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px 16px;
+      border: none;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
+      margin-bottom: 12px;
+    }
+
+    .btn:active { transform: translateY(1px); }
+
+    .btn-create {
+      background: linear-gradient(135deg, var(--rb-purple), var(--rb-purple-2));
+      color: #ffffff;
+      box-shadow: 0 8px 18px rgba(123,45,141,0.18);
+    }
+
+    .btn-close {
+      background: linear-gradient(135deg, var(--rb-green), var(--rb-green-2));
+      color: #ffffff;
+      box-shadow: 0 8px 18px rgba(22,163,74,0.16);
+    }
+
+    .btn-dashboard {
+      background: linear-gradient(135deg, var(--rb-gray-dark), var(--rb-gray-dark-2));
+      color: #ffffff;
+      box-shadow: 0 8px 18px rgba(55,65,81,0.25);
+    }
+
+    .note {
+      font-size: 12px;
+      color: var(--rb-gray);
+      margin-top: 16px;
+    }
+
+    .footer {
+      position: absolute;
+      left: 20px;
+      bottom: 12px;
+      font-size: 11px;
+      color: #9CA3AF;
+    }
+
+    @media (max-width:420px){
+      .card { padding: 24px; border-radius: 14px; }
+      .logo { width: 170px; }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="card">
-  <img class="logo"
-    src="https://raw.githubusercontent.com/fahrizhaarifin-bot/rb-shera-assets/main/images.png">
+  <div class="card" role="main" aria-label="RB SHERA Abnormality Management">
 
-  <h2>Abnormality Management</h2>
-  <p>RB-1 Area</p>
+    <img
+      class="logo"
+      src="https://raw.githubusercontent.com/fahrizhaarifin-bot/rb-shera-assets/main/images.png"
+      alt="RB SHERA Logo">
 
-  <button class="create"
-    onclick="location.href='https://docs.google.com/forms/d/1A33oa28I6T_RInn7DWd8JZBpmjDTgLlaPAKNnSMxN9E/viewform'">
-    Create Abnormality
-  </button>
+    <h1>Abnormality Management</h1>
+    <h2>RB-1 Area</h2>
 
-  <button class="close"
-    onclick="location.href='https://docs.google.com/forms/d/1EewvDHmRgB8QRdw2Uz7PZ1zZ-OhO4AVGXeH964QHONM/viewform'">
-    Closing Abnormality
-  </button>
+    <button class="btn btn-create"
+      onclick="openInNewTab('https://docs.google.com/forms/d/1A33oa28I6T_RInn7DWd8JZBpmjDTgLlaPAKNnSMxN9E/viewform')">
+      ➕ Create Abnormality
+    </button>
 
-  <button class="dashboard"
-    onclick="location.href='https://lookerstudio.google.com/reporting/5041ec5b-ebc3-4c5d-ac83-749eb73de92b/page/umwkF'">
-    Dashboard
-  </button>
-</div>
+    <button class="btn btn-close"
+      onclick="openInNewTab('https://docs.google.com/forms/d/1EewvDHmRgB8QRdw2Uz7PZ1zZ-OhO4AVGXeH964QHONM/viewform')">
+      ✅ Closing Abnormality
+    </button>
+
+    <button class="btn btn-dashboard"
+      onclick="openInNewTab('https://lookerstudio.google.com/reporting/5041ec5b-ebc3-4c5d-ac83-749eb73de92b/page/umwkF')">
+      📊 Dashboard Report Abnormality
+    </button>
+
+    <p class="note">Tip: tombol terbuka di tab baru agar Anda tidak kehilangan halaman utama.</p>
+
+    <div class="footer">Created by <strong>Catur Adi</strong></div>
+  </div>
+
+  <script>
+    function openInNewTab(url){
+      const w = window.open(url, '_blank');
+      if (w) w.opener = null;
+    }
+  </script>
 
 </body>
 </html>

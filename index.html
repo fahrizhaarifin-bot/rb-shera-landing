@@ -1,26 +1,121 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RB SHERA — Test Local</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RB SHERA — Abnormality Management</title>
+
 <style>
-body{margin:0;font-family:Arial;display:flex;align-items:center;justify-content:center;height:100vh;background:#f3e8ff}
-.card{width:90%;max-width:420px;background:#fff;padding:20px;border-radius:12px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,0.12)}
-.logo{width:120px;height:120px;border-radius:12px;background:#7B2D8D;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:12px}
-button{width:100%;padding:12px;margin-top:10px;border-radius:10px;border:none;color:#fff;font-weight:700;cursor:pointer}
-.create{background:#7B2D8D} .close{background:#16A34A} .dashboard{background:#4B5563}
-button:active{transform:scale(0.97);opacity:.95}
+*{
+  box-sizing:border-box;
+}
+
+html, body{
+  margin:0;
+  padding:0;
+  font-family: Arial, sans-serif;
+  background:#f3e8ff;
+}
+
+/* WRAPPER UTAMA (AMAN ANDROID & WEBVIEW) */
+.page{
+  min-height: 100svh; /* ⬅ FIX UTAMA */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:
+    calc(env(safe-area-inset-top) + 16px)
+    16px
+    calc(env(safe-area-inset-bottom) + 16px);
+}
+
+/* CARD */
+.card{
+  width:100%;
+  max-width:420px;
+  background:#ffffff;
+  padding:24px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* LOGO */
+.logo{
+  width:160px;
+  margin-bottom:16px;
+}
+
+/* TEXT */
+h2{
+  margin:8px 0 4px;
+  font-size:20px;
+}
+
+p{
+  margin:0 0 20px;
+  color:#555;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  padding:14px;
+  margin-bottom:12px;
+  font-size:16px;
+  font-weight:bold;
+  border:none;
+  border-radius:10px;
+  color:#fff;
+  cursor:pointer;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+/* EFEK RESPONSIF */
+button:active{
+  transform: scale(0.96);
+  opacity:0.9;
+}
+
+/* WARNA */
+.create{ background:#7B2D8D; }
+.close{ background:#16A34A; }
+.dashboard{ background:#4B5563; }
+
 </style>
 </head>
+
 <body>
+
+<div class="page">
   <div class="card">
-    <div class="logo">RB</div>
+
+    <img
+      class="logo"
+      src="https://raw.githubusercontent.com/fahrizhaarifin-bot/rb-shera-assets/main/images.png"
+      alt="RB SHERA Logo">
+
     <h2>Abnormality Management</h2>
     <p>RB-1 Area</p>
-    <button class="create" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSdPY_cQQaSXtgWlPF4u6Q7zq1jm_QhajbNbPQNi2WxXEJTsvA/viewform'">➕ Create Abnormality</button>
-    <button class="close" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSdh9UgpzgiC9xNayZVrkxziHx-RrhEgcGkGLZ-LV5LjQ8q7DA/viewform?usp=dialog'">✅ Closing Abnormality</button>
-    <button class="dashboard" onclick="location.href='https://lookerstudio.google.com/reporting/5041ec5b-ebc3-4c5d-ac83-749eb73de92b'">📊 Dashboard</button>
+
+    <button class="create"
+      onclick="window.open('https://docs.google.com/forms/d/1A33oa28I6T_RInn7DWd8JZBpmjDTgLlaPAKNnSMxN9E/viewform','_blank')">
+      ➕ Create Abnormality
+    </button>
+
+    <button class="close"
+      onclick="window.open('https://docs.google.com/forms/d/1EewvDHmRgB8QRdw2Uz7PZ1zZ-OhO4AVGXeH964QHONM/viewform','_blank')">
+      ✅ Closing Abnormality
+    </button>
+
+    <button class="dashboard"
+      onclick="window.open('https://lookerstudio.google.com/reporting/5041ec5b-ebc3-4c5d-ac83-749eb73de92b/page/umwkF','_blank')">
+      📊 Dashboard
+    </button>
+
   </div>
+</div>
+
 </body>
 </html>
